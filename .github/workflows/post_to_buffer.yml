@@ -1,1 +1,27 @@
+name: Post to Buffer
 
+on:
+  schedule:
+    - cron: '0 16 * * 1,3,5'  # Mon/Wed/Fri at 16:00 UTC (2 hours after the Bluesky poster)
+  workflow_dispatch: {}
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Buffer poster
+        working-directory: scripts
+        env:
+          CRYPTO_REPO: ${{ secrets.CRYPTO_REPO }}
+          CRYPTO_REPO_TOKEN: ${{ secrets.CRYPTO_REPO_TOKEN }}
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_CHANNEL_IDS: ${{ secrets.BUFFER_CHANNEL_IDS }}
+        run: python post_to_buffer.py
