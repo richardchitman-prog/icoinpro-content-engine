@@ -1,1 +1,28 @@
+name: Generate Blog Post
 
+on:
+  schedule:
+    - cron: '0 14 * * 0'  # Every Sunday at 14:00 UTC
+  workflow_dispatch: {}    # lets you trigger it manually from the Actions tab
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run generator
+        working-directory: scripts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CRYPTO_REPO: ${{ secrets.CRYPTO_REPO }}
+          CRYPTO_REPO_TOKEN: ${{ secrets.CRYPTO_REPO_TOKEN }}
+          ENGINE_REPO: ${{ github.repository }}
+          ENGINE_REPO_TOKEN: ${{ secrets.ENGINE_REPO_TOKEN }}
+        run: python generate_blog_post.py
