@@ -64,7 +64,7 @@ Respond with ONLY valid JSON, no markdown fences, no preamble, in this exact sha
     user_prompt = f"Topic: {topic}\nAngle: {angle}"
 
     req_body = json.dumps({
-        "model": "claude-sonnet-4-6",
+        "model": "claude-sonnet-5",
         "max_tokens": 2000,
         "system": system_prompt,
         "messages": [{"role": "user", "content": user_prompt}],
