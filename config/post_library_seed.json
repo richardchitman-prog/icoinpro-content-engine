@@ -1,46 +1,24 @@
 {
-  "_instructions": "This file gets copied to post_library.json in your richard-crypto-notes repo on first setup. Fill in the real slug/URL/title for each of your 6 existing posts below (placeholders shown). New posts get appended here automatically by generate_blog_post.py. status values: evergreen_active (eligible for repeat rotation), queued_for_buffer (new, not yet posted), posted (already shared, kept for history).",
   "posts": [
     {
-      "id": "evergreen_tradefinder",
-      "title": "REPLACE: Tradefinder post title",
-      "url": "https://richard-crypto-notes.netlify.app/blog/REPLACE-SLUG.html",
-      "hook": "REPLACE: one-line hook for social captions",
+      "id": "tradefinder-tool",
+      "title": "What the Tradefinder Tool Actually Does",
+      "url": "https://richard-crypto-notes.netlify.app/blog/tradefinder-tool",
+      "hook": "A plain look at the trade-scanning tool built into iCoinPro's Micro Profit System — what it flags, and what it doesn't decide for you.",
       "status": "evergreen_active"
     },
     {
-      "id": "evergreen_education",
-      "title": "REPLACE: education structure post title",
-      "url": "https://richard-crypto-notes.netlify.app/blog/REPLACE-SLUG.html",
-      "hook": "REPLACE: one-line hook",
+      "id": "why-education-first",
+      "title": "Why iCoinPro Leads With Education",
+      "url": "https://richard-crypto-notes.netlify.app/blog/why-education-first",
+      "hook": "The training is bite-sized on purpose. Here's what the course structure actually looks like and who it's built for.",
       "status": "evergreen_active"
     },
     {
-      "id": "evergreen_company",
-      "title": "REPLACE: company background post title",
-      "url": "https://richard-crypto-notes.netlify.app/blog/REPLACE-SLUG.html",
-      "hook": "REPLACE: one-line hook",
-      "status": "evergreen_active"
-    },
-    {
-      "id": "evergreen_terms",
-      "title": "REPLACE: crypto terminology post title",
-      "url": "https://richard-crypto-notes.netlify.app/blog/REPLACE-SLUG.html",
-      "hook": "REPLACE: one-line hook",
-      "status": "evergreen_active"
-    },
-    {
-      "id": "evergreen_mistakes",
-      "title": "REPLACE: beginner mistakes post title",
-      "url": "https://richard-crypto-notes.netlify.app/blog/REPLACE-SLUG.html",
-      "hook": "REPLACE: one-line hook",
-      "status": "evergreen_active"
-    },
-    {
-      "id": "evergreen_checkin",
-      "title": "REPLACE: one-month check-in post title",
-      "url": "https://richard-crypto-notes.netlify.app/blog/REPLACE-SLUG.html",
-      "hook": "REPLACE: one-line hook",
+      "id": "company-story",
+      "title": "Who's Behind iCoinPro — A Quick Rundown",
+      "url": "https://richard-crypto-notes.netlify.app/blog/company-story",
+      "hook": "The founders, the origin story, and where the company says it's headed next.",
       "status": "evergreen_active"
     }
   ]
