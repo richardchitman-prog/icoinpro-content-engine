@@ -24,6 +24,7 @@ import json
 import os
 import time
 import urllib.request
+import urllib.error
 
 from gh_utils import GITHUB_API, gh_request, get_file, put_file, create_branch
 
@@ -80,9 +81,13 @@ Respond with ONLY valid JSON, no markdown fences, no preamble, in this exact sha
         },
         method="POST",
     )
-    with urllib.request.urlopen(req) as resp:
-        data = json.loads(resp.read().decode())
-
+    try:
+        with urllib.request.urlopen(req) as resp:
+            data = json.loads(resp.read().decode())
+    except urllib.error.HTTPError as e:
+        print("ANTHROPIC ERROR BODY:", e.read().decode())
+        raise
+      
     text = "".join(block["text"] for block in data["content"] if block["type"] == "text")
     text = text.strip()
     if text.startswith("```"):
