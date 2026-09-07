@@ -94,7 +94,7 @@ Respond with ONLY valid JSON, no markdown fences, no preamble, in this exact sha
         text = text.split("```")[1]
         if text.startswith("json"):
             text = text[4:]
-    return json.loads(text)
+    return json.loads(text,strict=False)
 
 
 def main():
